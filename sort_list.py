@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-from string import digits
-from random import choice
-
-DIGITS_LIST = [3, 7, 1, 5, 0, 2, 9, 6]
-RANDOM_LIST = [choice(digits) for _ in range(24)]
 
 
 # v1-dznet
@@ -40,4 +35,12 @@ def buildin_sort(_list):
 
 # test
 
-print(sort_digits_list(DIGITS_LIST))
+from string import digits
+from random import choice
+
+def gen_random_list(size=16):
+  return list(map(lambda x: choice(digits), range(size)))
+
+
+print(sort_digits_list(gen_random_list()))
+
