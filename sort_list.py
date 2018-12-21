@@ -5,14 +5,13 @@
 
 def sort_digits_list(_list):
 
-  _int = int(1)
-  key = int()
-
   for _ in _list:
+
+    key = int()
 
     for digit in _list:
 
-      key = key.__add__(_int)
+      key = key.__add__(int(1))
 
       if key.__lt__(_list.__len__()) \
       and digit.__gt__(_list.__getitem__(key)):
@@ -20,9 +19,7 @@ def sort_digits_list(_list):
         tmp = _list.__getitem__(key)
 
         _list.__setitem__(key, digit)
-        _list.__setitem__((key - _int), tmp)
-
-    key = int()
+        _list.__setitem__(key - int(1), tmp)
 
   return _list
 
@@ -38,9 +35,8 @@ def buildin_sort(_list):
 from string import digits
 from random import choice
 
-def gen_random_list(size=16):
-  return list(map(lambda x: choice(digits), range(size)))
+def gen_random_list(size=int(16)):
+  return list(map(lambda x: choice(digits), range(int(size))))
 
 
 print(sort_digits_list(gen_random_list()))
-
